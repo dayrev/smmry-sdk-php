@@ -1,7 +1,7 @@
 {
     "name": "dayrev/smmry-sdk-php",
     "type": "library",
-    "description": "Text summarizer.",
+    "description": "PHP SDK for Smmry Text Summarization API.",
     "keywords": ["smmry", "summarizer", "summary", "php"],
     "homepage": "https://github.org/dayrev/smmry-sdk-php",
     "license": "MIT",
