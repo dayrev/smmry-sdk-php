@@ -50,9 +50,11 @@ class SDK
      */
     public function summarizeText(string $text): stdClass
     {
-        return $this->requester->post($this->buildUrl(), array(
+        $summary = $this->requester->post($this->buildUrl(), array(
             'sm_api_input' => $text,
         ));
+
+        return $this->cleanSummary($summary);
     }
 
     /**
@@ -64,7 +66,9 @@ class SDK
      */
     public function summarizeUrl(string $url): stdClass
     {
-        return $this->requester->get($this->buildUrl(array('SM_URL' => $url)));
+        $summary = $this->requester->get($this->buildUrl(array('SM_URL' => $url)));
+
+        return $this->cleanSummary($summary);
     }
 
     /**
@@ -101,5 +105,20 @@ class SDK
         $url .= '?' . http_build_query($params);
 
         return $url;
+    }
+
+    /**
+     * Cleans summary response values.
+     *
+     * @param stdClass $summary The summary response to clean.
+     *
+     * @return stdClass
+     */
+    protected function cleanSummary(stdClass $summary)
+    {
+        $summary->sm_api_title = trim($summary->sm_api_title);
+        $summary->sm_api_content = trim($summary->sm_api_content);
+
+        return $summary;
     }
 }
