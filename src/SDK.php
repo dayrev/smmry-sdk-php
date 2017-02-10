@@ -10,7 +10,7 @@ class SDK
     /**
      * The request handler.
      *
-     * @var Object
+     * @var object
      */
     protected $requester;
 
@@ -35,7 +35,7 @@ class SDK
      *
      * @return void
      */
-    public function __construct(array $data = array())
+    public function __construct(array $data = [])
     {
         $this->loadData($data);
         $this->requester = new Curl();
@@ -50,9 +50,9 @@ class SDK
      */
     public function summarizeText(string $text): stdClass
     {
-        $summary = $this->requester->post($this->buildUrl(), array(
+        $summary = $this->requester->post($this->buildUrl(), [
             'sm_api_input' => $text,
-        ));
+        ]);
 
         return $this->cleanSummary($summary);
     }
@@ -66,7 +66,7 @@ class SDK
      */
     public function summarizeUrl(string $url): stdClass
     {
-        $summary = $this->requester->get($this->buildUrl(array('SM_URL' => $url)));
+        $summary = $this->requester->get($this->buildUrl(['SM_URL' => $url]));
 
         return $this->cleanSummary($summary);
     }
@@ -78,7 +78,7 @@ class SDK
      *
      * @return void
      */
-    protected function loadData(array $data = array())
+    protected function loadData(array $data = [])
     {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
@@ -94,12 +94,12 @@ class SDK
      *
      * @return string
      */
-    protected function buildUrl(array $data = array()): string
+    protected function buildUrl(array $data = []): string
     {
-        $params = array_merge(array(
+        $params = array_merge([
             'SM_API_KEY' => $this->api_key,
             'SM_LENGTH' => $this->summary_length,
-        ), $data);
+        ], $data);
 
         $url  = 'http://api.smmry.com';
         $url .= '?' . http_build_query($params);

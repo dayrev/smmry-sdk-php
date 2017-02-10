@@ -13,7 +13,7 @@ Alternatively, add `"dayrev/smmry-sdk-php": "^1.0"` to your composer.json file.
 
 ##Usage
 ```php
-$sdk = new DayRev\Smmry\SDK(array('api_key' => 'YOURKEYHERE', 'summary_length' => 5));
+$sdk = new DayRev\Smmry\SDK(['api_key' => 'YOURKEYHERE', 'summary_length' => 5]);
 $summary = $sdk->summarizeUrl('http://collegefootball.ap.org/article/mayfield-leads-oklahoma-35-19-sugar-bowl-win-over-auburn');
 ```
 

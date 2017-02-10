@@ -8,7 +8,7 @@ class SDKTest extends \PHPUnit_Framework_TestCase
 {
     public function testContainsDynamicProperties()
     {
-        $sdk = new SDK(array('api_key' => 'D74KLJ345UH9SHDF1', 'summary_length' => 5));
+        $sdk = new SDK(['api_key' => 'D74KLJ345UH9SHDF1', 'summary_length' => 5]);
 
         $this->assertObjectHasAttribute('api_key', $sdk);
         $this->assertAttributeEquals('D74KLJ345UH9SHDF1', 'api_key', $sdk);
