@@ -1,3 +1,6 @@
+# Smmry PHP SDK
+[![StyleCI](https://styleci.io/repos/80203543/shield?branch=master)](https://styleci.io/repos/80203543)
+
 ## Overview
 
 A simple SDK interface for interacting with the [Smmry](http://smmry.com) text summarization API.
