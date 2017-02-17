@@ -3,7 +3,6 @@
 namespace DayRev\Smmry\Tests\Integration;
 
 use DayRev\Smmry\SDK;
-use Mockery;
 use stdClass;
 
 class SDKTest extends TestCase
