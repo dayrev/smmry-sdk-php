@@ -116,8 +116,14 @@ class SDK
      */
     protected function cleanSummary(stdClass $summary)
     {
-        $summary->sm_api_title = trim($summary->sm_api_title);
-        $summary->sm_api_content = trim($summary->sm_api_content);
+        $properties = ['sm_api_title', 'sm_api_content'];
+        foreach ($properties as $property) {
+            if (!property_exists($summary, $property)) {
+                continue;
+            }
+
+            $summary->$property = trim($summary->$property);
+        }
 
         return $summary;
     }
