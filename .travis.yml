@@ -11,3 +11,8 @@ before_script:
 
 script:
   - phpunit -d api_key=$API_KEY
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
