@@ -15,6 +15,18 @@ class SDKTest extends TestCase
         $this->sdk = new SDK(['api_key' => $this->config['api_key'], 'summary_length' => 5]);
     }
 
+    public function testApiKeyIsInvalid()
+    {
+        $sdk = $this->sdk = new SDK(['api_key' => 'INVALID1J3243N090', 'summary_length' => 5]);
+        $response = $sdk->summarizeText($this->getTextToSummarize());
+
+        $this->assertInstanceOf('stdClass', $response);
+        $this->assertObjectHasAttribute('sm_api_error', $response);
+        $this->assertObjectHasAttribute('sm_api_message', $response);
+        $this->assertEquals(1, $response->sm_api_error);
+        $this->assertEquals('INVALID API KEY', $response->sm_api_message);
+    }
+
     public function testSummarizesExpectedText()
     {
         $response = $this->sdk->summarizeText($this->getTextToSummarize());
