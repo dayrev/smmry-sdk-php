@@ -114,7 +114,7 @@ class SDK
      *
      * @return stdClass
      */
-    protected function cleanSummary(stdClass $summary)
+    protected function cleanSummary(stdClass $summary): stdClass
     {
         $properties = ['sm_api_title', 'sm_api_content'];
         foreach ($properties as $property) {
