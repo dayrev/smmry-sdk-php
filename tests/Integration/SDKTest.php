@@ -14,7 +14,7 @@ class SDKTest extends TestCase
 
     public function setUp()
     {
-        $this->sdk = new SDK(['api_key' => 'D74KLJ345UH9SHDF1', 'summary_length' => 5]);
+        $this->sdk = new SDK(['api_key' => $this->config['api_key'], 'summary_length' => 5]);
     }
 
     public function testSummarizesExpectedText()
