@@ -27,5 +27,7 @@ To run the test suite, run the following commands from the root directory:
 
 ```
 composer install
-vendor/bin/phpunit
+vendor/bin/phpunit -d api_key=YOUR_SMMRY_API_KEY
 ```
+
+> **Note:** A valid Smmry API key is required when running the integration tests.
