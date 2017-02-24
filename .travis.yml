@@ -19,6 +19,11 @@ before_script:
 script:
   - phpunit -d api_key=$API_KEY --coverage-clover build/logs/clover.xml
 
+# Cache composer bits for faster test suite runs.
+cache:
+  directories:
+  - $HOME/.cache/composer
+
 notifications:
   email:
     on_success: change
