@@ -19,6 +19,10 @@ before_script:
 script:
   - phpunit -d api_key=$API_KEY --coverage-clover build/logs/clover.xml
 
+# Submit test coverage report to Coveralls.
+after_success:
+  - vendor/bin/coveralls -v
+
 # Cache composer bits for faster test suite runs.
 cache:
   directories:
