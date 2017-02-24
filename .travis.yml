@@ -26,7 +26,7 @@ after_success:
 # Cache composer bits for faster test suite runs.
 cache:
   directories:
-  - $HOME/.cache/composer
+  - $HOME/.composer/cache
 
 notifications:
   email:
