@@ -22,7 +22,7 @@ before_script:
 
 # Run tests and generate test coverage report.
 script:
-  - phpunit -d api_key=$API_KEY --testsuite $TEST_SUITE --coverage-clover build/logs/clover.xml
+  - phpunit -d api_key=$API_KEY --testsuite "$TEST_SUITE" --coverage-clover build/logs/clover.xml
 
 # Submit test coverage report to Coveralls.
 after_success:
