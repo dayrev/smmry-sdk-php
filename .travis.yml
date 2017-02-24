@@ -5,12 +5,19 @@ php:
   - '7.1'
   - nightly
 
+# Install test coverage package.
+install:
+  - composer require satooshi/php-coveralls
+
+# Install packages and create test coverage log directory.
 before_script:
   - composer self-update
-  - composer install --dev
+  - composer install --dev --no-interaction
+  - mkdir -p build/logs
 
+# Run tests and generate test coverage report.
 script:
-  - phpunit -d api_key=$API_KEY
+  - phpunit -d api_key=$API_KEY --coverage-clover build/logs/clover.xml
 
 notifications:
   email:
