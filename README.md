@@ -1,6 +1,5 @@
 # Smmry PHP SDK
 [![Build Status](https://travis-ci.org/dayrev/smmry-sdk-php.svg?branch=master)](https://travis-ci.org/dayrev/smmry-sdk-php)
-[![StyleCI](https://styleci.io/repos/80203543/shield?branch=master)](https://styleci.io/repos/80203543)
 [![Coverage Status](https://coveralls.io/repos/github/dayrev/smmry-sdk-php/badge.svg)](https://coveralls.io/github/dayrev/smmry-sdk-php)
 [![Latest Stable Version](https://poser.pugx.org/dayrev/smmry-sdk-php/v/stable.png)](https://packagist.org/packages/dayrev/smmry-sdk-php)
 [![Dependency Status](https://www.versioneye.com/user/projects/589d94156a7781003b243071/badge.svg?style=flat)](https://www.versioneye.com/user/projects/589d94156a7781003b243071)

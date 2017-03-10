@@ -15,6 +15,7 @@ before_script:
 
 # Run tests and generate test coverage report.
 script:
+  - vendor/bin/phpcs ./src ./tests --extensions=php --standard=PSR2
   - phpunit -d api_key=$API_KEY --coverage-clover build/logs/clover.xml
 
 # Submit test coverage report to Coveralls.
