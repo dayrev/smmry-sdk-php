@@ -16,7 +16,7 @@ composer require dayrev/smmry-sdk-php
 
 Alternatively, add `"dayrev/smmry-sdk-php": "^1.0"` to your composer.json file.
 
-##Usage
+## Usage
 ```php
 $sdk = new DayRev\Smmry\SDK(['api_key' => 'YOURKEYHERE', 'summary_length' => 5]);
 $summary = $sdk->summarizeText($long_text_string_here);
